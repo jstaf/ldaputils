@@ -249,7 +249,7 @@ class Connection(ldap3.Connection):
                             # string coercion avoided for 1-element lists
                             v = v[0]
 
-                except KeyError:
+                except (KeyError, IndexError):
                     v = None
 
                 query[k].append(v)
